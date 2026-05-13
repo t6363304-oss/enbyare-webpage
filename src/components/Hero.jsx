@@ -2,38 +2,69 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-teal-50 via-white to-emerald-50 px-6 text-center"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div className="max-w-2xl mx-auto">
-        <span className="inline-block mb-4 px-4 py-1 rounded-full bg-teal-100 text-teal-700 text-sm font-medium tracking-wider">
-          学生ボランティア団体
+      {/* Background gradient — deep forest green */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-emerald-800" />
+
+      {/* Decorative blobs */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-green-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-5 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto py-32">
+        {/* Badge */}
+        <span className="inline-block mb-6 px-5 py-2 rounded-full bg-orange-500/90 text-white text-sm font-bold tracking-widest shadow-lg">
+          学生団体 ・ 福島県只見町
         </span>
-        <h1 className="text-5xl sm:text-7xl font-bold text-gray-800 mb-6 leading-tight">
+
+        {/* Main title */}
+        <h1 className="text-6xl sm:text-8xl font-black text-white mb-6 tracking-tight leading-none">
           えんびゃれ
         </h1>
-        {/* TODO: 団体のキャッチコピーに変更してください */}
-        <p className="text-lg sm:text-xl text-gray-500 mb-10 leading-relaxed">
-          つながりから、社会を変える。<br className="hidden sm:block" />
-          ひとりひとりの力を、大きなうねりに。
+
+        {/* Catchphrase */}
+        <p className="text-xl sm:text-2xl text-green-100 font-bold mb-5 leading-relaxed">
+          若者が只見と関わり続けるきっかけをつくる学生団体
         </p>
+
+        {/* Sub-copy */}
+        <p className="text-green-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-12">
+          豪雪地帯に広がる只見の自然、受け継がれてきた集落の文化、<br className="hidden sm:block" />
+          そこで生きる人々との出会い。<br className="hidden sm:block" />
+          学生だからこそできる挑戦を、一緒にしてみませんか。
+        </p>
+
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#about"
-            className="px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-full transition-colors shadow-md"
+            className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform text-base"
           >
             えんびゃれを知る
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 border-2 border-teal-600 text-teal-700 hover:bg-teal-50 font-semibold rounded-full transition-colors"
+            className="px-8 py-4 border-2 border-white/50 text-white hover:bg-white/10 font-bold rounded-full transition-all backdrop-blur-sm text-base"
           >
-            お問い合わせ
+            参加・お問い合わせ
           </a>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 animate-bounce text-teal-400">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-green-400">
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
