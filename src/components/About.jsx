@@ -44,20 +44,29 @@ export default function About() {
 
         {/* Main description block */}
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 sm:p-12 mb-16 border border-green-100">
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-gray-700 text-lg leading-loose">
-              えんびゃれは、
-              <span className="font-bold text-green-800">福島県只見町</span>
-              をフィールドに活動する学生団体です。<br />
-              豪雪地帯に広がる豊かな自然、受け継がれてきた集落の知恵と文化、<br className="hidden sm:block" />
-              そこで生きる人々との出会いを通じて、<br />
-              <span className="font-bold text-green-700">「若者が只見と関わり続けるきっかけ」</span>
-              をつくっています。
-            </p>
-            <p className="mt-6 text-gray-500 text-base leading-relaxed">
-              学生が地域に入り込み、一緒に汗を流すことで生まれる縁（えん）。<br />
-              その縁が、若者にとっても只見にとっても、あたらしい力になると信じています。
-            </p>
+          <div className="flex flex-col sm:flex-row items-center gap-10">
+            <div className="flex-1 text-center sm:text-left">
+              <p className="text-gray-700 text-lg leading-loose">
+                えんびゃれは、
+                <span className="font-bold text-green-800">福島県只見町</span>
+                をフィールドに活動する学生団体です。<br />
+                豪雪地帯に広がる豊かな自然、受け継がれてきた集落の知恵と文化、<br className="hidden sm:block" />
+                そこで生きる人々との出会いを通じて、<br />
+                <span className="font-bold text-green-700">「若者が只見と関わり続けるきっかけ」</span>
+                をつくっています。
+              </p>
+              <p className="mt-6 text-gray-500 text-base leading-relaxed">
+                学生が地域に入り込み、一緒に汗を流すことで生まれる縁（えん）。<br />
+                その縁が、若者にとっても只見にとっても、あたらしい力になると信じています。
+              </p>
+            </div>
+            <div className="flex-shrink-0 w-full sm:w-80">
+              <img
+                src="/images/activity_a5.jpg"
+                alt="えんびゃれメンバー集合写真"
+                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
+              />
+            </div>
           </div>
         </div>
 

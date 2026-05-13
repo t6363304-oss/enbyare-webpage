@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import Gallery from './components/Gallery'
 import Activities from './components/Activities'
 import Achievements from './components/Achievements'
 import Contact from './components/Contact'
@@ -13,6 +14,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Gallery />
         <Activities />
         <Achievements />
         <Contact />

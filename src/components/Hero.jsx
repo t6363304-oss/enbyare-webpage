@@ -4,15 +4,16 @@ export default function Hero() {
       id="top"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient — deep forest green */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-900 to-emerald-800" />
+      {/* Background photo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/activity_a1.jpg')" }}
+      />
 
-      {/* Decorative blobs */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-green-600/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-0 left-0 w-64 h-64 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none" />
+      {/* Dark green overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-green-950/80 via-green-950/65 to-green-950/85" />
 
-      {/* Grid pattern overlay */}
+      {/* Subtle grid pattern overlay */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{

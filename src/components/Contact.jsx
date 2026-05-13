@@ -15,8 +15,8 @@ const purposes = [
     title: '協力したい',
     subtitle: '地域・企業・団体の方へ',
     body: '只見町や地域づくりに関心のある団体・企業の方、学生と一緒に何かできないか模索している方、ぜひお声がけください。',
-    cta: 'お問い合わせはこちら',
-    href: 'https://twitter.com/HPR49150091',
+    cta: 'メールでお問い合わせ',
+    href: 'mailto:aizu.volun.tadami@gmail.com',
     ctaStyle: 'bg-orange-500 hover:bg-orange-600 text-white',
     borderStyle: 'border-orange-200 hover:border-orange-400',
     badgeStyle: 'bg-orange-50 text-orange-700',
@@ -27,7 +27,7 @@ const purposes = [
     subtitle: 'メディア・記者の方へ',
     body: '活動の取材・記事掲載・インタビューなど、メディア関係の方もお気軽にご連絡ください。活動の詳細をお伝えします。',
     cta: '取材のお問い合わせ',
-    href: 'https://twitter.com/HPR49150091',
+    href: 'mailto:aizu.volun.tadami@gmail.com',
     ctaStyle: 'bg-gray-800 hover:bg-gray-900 text-white',
     borderStyle: 'border-gray-200 hover:border-gray-400',
     badgeStyle: 'bg-gray-50 text-gray-700',
@@ -72,6 +72,21 @@ export default function Contact() {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* Email CTA */}
+        <div className="bg-orange-50 border border-orange-200 rounded-3xl p-8 mb-8 text-center">
+          <p className="text-orange-800 font-bold text-lg mb-2">メールでもお気軽に</p>
+          <p className="text-orange-600 text-sm mb-4">返信まで数日かかる場合があります。まずはSNSのDMがおすすめです。</p>
+          <a
+            href="mailto:aizu.volun.tadami@gmail.com"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 transform"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            aizu.volun.tadami@gmail.com
+          </a>
         </div>
 
         {/* SNS section */}

@@ -1,6 +1,7 @@
 const activities = [
   {
     number: '01',
+    photo: '/images/activity_a80.jpg',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -13,6 +14,7 @@ const activities = [
   },
   {
     number: '02',
+    photo: '/images/activity_a10.jpg',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -25,6 +27,7 @@ const activities = [
   },
   {
     number: '03',
+    photo: '/images/activity_a60.jpg',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -37,6 +40,7 @@ const activities = [
   },
   {
     number: '04',
+    photo: '/images/activity_a50.jpg',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
@@ -69,25 +73,35 @@ export default function Activities() {
           {activities.map((a) => (
             <div
               key={a.number}
-              className="rounded-2xl bg-green-900/50 border border-green-700/40 p-8 hover:bg-green-800/50 hover:border-green-600/50 transition-all group"
+              className="rounded-2xl bg-green-900/50 border border-green-700/40 overflow-hidden hover:bg-green-800/50 hover:border-green-600/50 transition-all group"
             >
-              <div className="flex items-start gap-5">
-                {/* Number + icon */}
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500/30 transition-colors">
-                    {a.icon}
+              {/* Photo thumbnail */}
+              <div className="h-44 overflow-hidden">
+                <img
+                  src={a.photo}
+                  alt={a.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-8">
+                <div className="flex items-start gap-5">
+                  {/* Number + icon */}
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500/30 transition-colors">
+                      {a.icon}
+                    </div>
                   </div>
-                </div>
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-bold text-green-500 tracking-widest">{a.number}</span>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-green-800 text-green-300 border border-green-700">
-                      {a.tag}
-                    </span>
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-xs font-bold text-green-500 tracking-widest">{a.number}</span>
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-green-800 text-green-300 border border-green-700">
+                        {a.tag}
+                      </span>
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-3">{a.title}</h3>
+                    <p className="text-green-300 text-sm leading-relaxed">{a.body}</p>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3">{a.title}</h3>
-                  <p className="text-green-300 text-sm leading-relaxed">{a.body}</p>
                 </div>
               </div>
             </div>
