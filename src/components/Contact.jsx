@@ -1,3 +1,7 @@
+import { useState } from 'react'
+
+const WEB3FORMS_KEY = 'e726b01a-3a39-436c-a342-d957c68013d9'
+
 const purposes = [
   {
     emoji: '🌱',
@@ -33,6 +37,61 @@ const purposes = [
     badgeStyle: 'bg-gray-50 text-gray-700',
   },
 ]
+
+function ContactForm() {
+  const [status, setStatus] = useState('idle')
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setStatus('sending')
+    const formData = new FormData(e.target)
+    formData.append('access_key', WEB3FORMS_KEY)
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+    })
+    if (res.ok) {
+      setStatus('sent')
+      e.target.reset()
+    } else {
+      setStatus('error')
+    }
+  }
+
+  return (
+    <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 sm:p-12 mb-8">
+      <h3 className="text-lg font-bold text-gray-900 mb-2">メッセージを送る</h3>
+      <p className="text-gray-500 text-sm mb-8">フォームから送信すると <span className="font-medium text-gray-700">aizu.volun.tadami@gmail.com</span> に届きます。</p>
+      {status === 'sent' ? (
+        <p className="text-green-700 font-bold text-center py-8">送信しました。ありがとうございます！</p>
+      ) : (
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">お名前 <span className="text-red-500">*</span></label>
+              <input name="name" type="text" required placeholder="山田 太郎" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:outline-none text-sm" />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">メールアドレス <span className="text-red-500">*</span></label>
+              <input name="email" type="email" required placeholder="example@email.com" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:outline-none text-sm" />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">お問い合わせ内容 <span className="text-red-500">*</span></label>
+            <textarea name="message" required rows={5} placeholder="参加について、活動の詳細など、お気軽にご記入ください。" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:outline-none text-sm resize-none" />
+          </div>
+          {status === 'error' && (
+            <p className="text-red-600 text-sm">送信に失敗しました。メールでの連絡もお試しください。</p>
+          )}
+          <button type="submit" disabled={status === 'sending'} className="self-end px-8 py-3 bg-green-700 hover:bg-green-800 disabled:bg-gray-400 text-white font-bold rounded-full transition-all text-sm">
+            {status === 'sending' ? '送信中...' : '送信する'}
+          </button>
+        </form>
+      )}
+    </div>
+  )
+}
 
 export default function Contact() {
   return (
@@ -73,6 +132,9 @@ export default function Contact() {
             </div>
           ))}
         </div>
+
+        {/* Contact form */}
+        <ContactForm />
 
         {/* Email CTA */}
         <div className="bg-orange-50 border border-orange-200 rounded-3xl p-8 mb-8 text-center">
