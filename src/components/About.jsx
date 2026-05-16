@@ -75,9 +75,9 @@ export default function About() {
           {values.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl border border-gray-100 p-8 text-center"
+              className="rounded-2xl border border-gray-100 p-8 text-center hover:shadow-lg hover:border-green-200 transition-all group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-50 text-green-700 mb-5">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-green-50 text-green-700 mb-5 group-hover:bg-green-100 transition-colors">
                 {v.icon}
               </div>
               <h3 className="text-base font-bold text-gray-900 mb-3">{v.title}</h3>

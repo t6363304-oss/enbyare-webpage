@@ -113,7 +113,7 @@ export default function Contact() {
           {purposes.map((p) => (
             <div
               key={p.title}
-              className={`rounded-2xl border-2 p-8 flex flex-col ${p.borderStyle}`}
+              className={`rounded-2xl border-2 p-8 flex flex-col transition-all hover:shadow-lg ${p.borderStyle}`}
             >
               <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-bold mb-5 w-fit ${p.badgeStyle}`}>
                 <span>{p.emoji}</span>
@@ -125,7 +125,7 @@ export default function Contact() {
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block text-center px-8 py-3 rounded-full font-bold text-sm ${p.ctaStyle}`}
+                className={`block text-center py-3 px-6 rounded-full font-bold text-sm transition-all hover:shadow-md hover:-translate-y-0.5 transform ${p.ctaStyle}`}
               >
                 {p.cta}
               </a>
@@ -142,7 +142,7 @@ export default function Contact() {
           <p className="text-orange-600 text-sm mb-4">返信まで数日かかる場合があります。まずはSNSのDMがおすすめです。</p>
           <a
             href="mailto:aizu.volun.tadami@gmail.com"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 transform"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
