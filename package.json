@@ -2,7 +2,7 @@
   "name": "enbyare-webpage",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://t6363304-oss.github.io/enbyare-webpage",
+  "homepage": "https://enbyare.f5.si/",
   "type": "module",
   "scripts": {
     "dev": "vite",
