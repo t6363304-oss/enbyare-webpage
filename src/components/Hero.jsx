@@ -51,13 +51,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#about"
-            className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform text-base"
+            className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full text-sm shadow-lg"
           >
             えんびゃれを知る
           </a>
           <a
             href="#contact"
-            className="px-8 py-4 border-2 border-white/50 text-white hover:bg-white/10 font-bold rounded-full transition-all backdrop-blur-sm text-base"
+            className="px-8 py-3 border-2 border-white/50 text-white hover:bg-white/10 font-bold rounded-full text-sm backdrop-blur-sm"
           >
             参加・お問い合わせ
           </a>
@@ -65,7 +65,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-green-400">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-green-400">
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>

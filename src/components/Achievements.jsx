@@ -70,7 +70,7 @@ export default function Achievements() {
                 </div>
 
                 {/* Card */}
-                <div className="flex-1 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow mb-2">
+                <div className="flex-1 bg-white rounded-2xl border border-gray-100 p-6 sm:p-8 shadow-sm mb-2">
                   <div className="flex flex-wrap items-center gap-3 mb-3">
                     <span className={`text-xs font-bold px-3 py-1 rounded-full ${item.categoryColor}`}>
                       {item.category}

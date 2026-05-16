@@ -73,21 +73,21 @@ export default function Activities() {
           {activities.map((a) => (
             <div
               key={a.number}
-              className="rounded-2xl bg-green-900/50 border border-green-700/40 overflow-hidden hover:bg-green-800/50 hover:border-green-600/50 transition-all group"
+              className="rounded-2xl bg-green-900/50 border border-green-700/40 overflow-hidden"
             >
               {/* Photo thumbnail */}
               <div className="h-44 overflow-hidden">
                 <img
                   src={a.photo}
                   alt={a.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-8">
                 <div className="flex items-start gap-5">
                   {/* Number + icon */}
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500/30 transition-colors">
+                    <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400">
                       {a.icon}
                     </div>
                   </div>

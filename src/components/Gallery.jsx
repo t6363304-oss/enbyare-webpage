@@ -32,7 +32,7 @@ export default function Gallery() {
               <img
                 src={p.src}
                 alt={p.alt}
-                className="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover aspect-square"
               />
             </div>
           ))}
